@@ -1,8 +1,8 @@
 # Azure subscription vars
-subscription_id = "20bf5e1b-b80b-4e18-882d-3933acf11704"
-client_id = "24655d0f-e6ca-48ef-a8e4-1d2a10b5aca0"
-client_secret = "AsK8Q~m3jesOh25aHTk8TObxj6oiZ~NIsW0KKaP."
-tenant_id = "db894e0b-bbe2-4066-aa7f-b7e68b62640c"
+subscription_id = "51003162-956a-4e6f-877b-3d0d913c7ca1"
+client_id = "ab5b3b1f-8aac-409a-a518-9be3385bb143"
+client_secret = "a058Q~s17JmjmCWMLC6ZgOZPpRufbd5Q3hyvTcy1"
+tenant_id = "f958e84a-92b8-439f-a62d-4f45996b6d07"
 
 # Resource Group/Location
 location = "East US"
@@ -17,4 +17,4 @@ address_prefix_test = "10.5.1.0/24"
 # VM
 vm_name = "udacity-project3-vm"
 admin_username = "bobbynguyen"
-public_key_path = "/home/vsts/work/_temp/id_rsa.pub"
+public_key_path = "/Users/longnh30.bu9/.ssh/id_rsa.pub"

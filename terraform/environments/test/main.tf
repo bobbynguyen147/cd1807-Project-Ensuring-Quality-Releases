@@ -5,14 +5,14 @@ provider "azurerm" {
   client_secret   = "${var.client_secret}"
   features {}
 }
-terraform {
-  backend "azurerm" {
-    storage_account_name = "tfstate1709"
-    container_name       = "tfstate"
-    key                  = "terraform.tfstate"
-    access_key           = "McUIB7e0lEVFmLsAYP0CR30J5OfAe94f3aVpLCH6zGIkEt1HGC9vQcefYS6FPmTLWBifZgViIHNc+AStFDC0VA=="
-  }
-}
+#terraform {
+#  backend "azurerm" {
+#    storage_account_name = "tfstate1709"
+#    container_name       = "tfstate"
+#    key                  = "terraform.tfstate"
+#    access_key           = "McUIB7e0lEVFmLsAYP0CR30J5OfAe94f3aVpLCH6zGIkEt1HGC9vQcefYS6FPmTLWBifZgViIHNc+AStFDC0VA=="
+#  }
+#}
 module "resource_group" {
   source               = "../../modules/resource_group"
   resource_group       = "${var.resource_group}"

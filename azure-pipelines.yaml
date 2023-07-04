@@ -63,7 +63,7 @@ stages:
           - task: InstallSSHKey@0
             inputs:
               knownHostsEntry: 'htnb' # variable value
-              sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDpU8He6o8yd6cBKEtoFkgGxgqxIy5abDrtUke+3VJYRu45iK1qIVzL5hH6SaucUbGSKpJeke5p15vfLFKpno9iXowTQGuDBWLw73p49c0E8M+mRjrPAlwGCAlIBF1Wbl5WiaBj1BH15J9FLV93qCs7XlDOVRDhz9ibtQAPzfQEcH8XKjiQaBgKmYKfc1kZ6xSwIg5SxZ0XMPYlY6r7YLsNVx+R+1lqcpB9Q0S8uayl+ewbcizoRJTWJ9z3lbA39PSLqOb+nJ0FyX5HsEnzgWwfyWHyCv88hRuFTpU2yVS8PYYxOincq6/yaz3yqqBG62lON5Z7jbbG9sqCoquMgdVY0g0N9huXscb/whjNbYFrI9OBQHtqWOnqb8N7650y8GVn4ir71J5VTCPlBcx5tE1lz3UexSxj5vmtqUdf1rk0z8JG+h9LktVzHhUF3n0vmn4ctdtpJy4m75+HsVzGpsD8obk/yOBVCktDC+OTe8wZRn3MmgXoJxp3oNBzyd5NtmE= htnb8@HTNB        '            # variable value
+              sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDJd7kwKeyjx60nmQSie6omYeyY5l5DYPy/i6J1oS5W4FGk4XdPvVtCmFWORuXC+tUhXPUyvPimJ01QU6ObGHR3FV0MXOLrBcmioW4Ww+xN68wh72m5YNis11NtmCwt0PqmxTH3PDdWtA0/YPFTocCVMMcBw2pu/cKVs1+vZYyGa2QdxaThz7xd3lWgUHmOqLaSpRRH9ywq+ZN/uR/eJULoOL3ONj+kM6Q1t6K2CbdBcMJg1edExlh1qkbdl81YcDXwVcb308a5GA0WXEZg99fxD8aDwIAV5SEylgwtElppKbQ3tZQjJJ4K77IBEDVZCjX6JUoodxVUyZr0i5AUgPoJmTROej+jYrTKKBOw6dRKwAdnBI/6ZKBbOITNcAOebGAwfUuX0y5v6Dp0uqdSe/mE1E/BICD8QNXDUoTPtXnK6Z105LMyKa2TZhVOHDsH2K2HMlMRSAXUckTKIW8zAKncztoJPvLnH8URGQERcGlZYDKmVFeB+ktlUm3Yrq3rzFM= longnh30.bu9@CPT00137102F.fsoft.fpt.vn'
               sshKeySecureFile: 'id_rsa' # Use secure file feature in the pipeline library UI to save the "id_rsa" file, as mentioned here: https://learn.microsoft.com/en-us/azure/devops/pipelines/library/secure-files?view=azure-devops#add-a-secure-file
 
           - task: DownloadSecureFile@1
@@ -168,7 +168,7 @@ stages:
         # ToDo: Complete the ArchiveFiles@2 task and publish step
       - job: PerformanceTests
         pool:
-          vmImage: 'ubuntu-18.04'
+          myAgentPool
         steps:
           - bash: |
               sudo apt-get install openjdk-11-jre-headless -y
@@ -210,7 +210,7 @@ stages:
       # ToDo: Provide <environment name> you created in your DevOps project
       - deployment: FakeRestAPI
         pool:
-          vmImage: 'Ubuntu-18.04'
+          myAgentPool
         environment: '$(environmentName)'   # ToDo
         strategy:
           runOnce:
